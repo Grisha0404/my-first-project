@@ -1,14 +1,15 @@
-.App-wrapper{
-  display: grid;
-  width: 1200px;
-  margin: auto;
-grid-template-areas:  /*расположение строк*/
-  'h h '
+.App-wrapper {
+    display: grid;
+    width: 1200px;
+    margin: auto;
+    grid-template-areas:  /*расположение строк*/ 'h h '
   'n c';
-  grid-template-rows: 60px 1fr; /*сколько строк*/
-  grid-template-columns: 2fr 10fr;/*сколько колонок*/
-  grid-gap: 10px;
+    grid-template-rows: 60px 1fr; /*сколько строк*/
+    grid-template-columns: 2fr 10fr; /*сколько колонок*/
+    grid-gap: 10px;
 
 }
-
+.App-wrapper-content{
+    grid-area: c;
+}
 

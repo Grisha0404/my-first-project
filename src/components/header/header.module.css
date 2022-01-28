@@ -3,7 +3,7 @@
 
 .header{
     grid-area: h;
-    background-color: beige;
+    background-color: dimgrey;
 }
 .header img{
     width: 60px;

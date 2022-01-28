@@ -10,10 +10,10 @@ const MyPosts = () => {
                 New Post
             </div>
             <div>
-                <Post message='Hi, how are you?' counts='Like 15'/>
+                <Post message='Hi, how are you?' counts='15'/>
             </div>
             <div>
-                <Post message="It's my first post!" counts='Like 20'/>
+                <Post message="It's my first post!" counts='20'/>
             </div>
         </div>
     )

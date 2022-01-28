@@ -4,7 +4,7 @@ import s from './header.module.css';
 const Header = () => {
     return <header className={s.header}>
         <img
-            src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/2048px-BMW_logo_%28gray%29.svg.png'/>
+            src='https://i.gifer.com/UOkf.gif'/>
     </header>
 }
 

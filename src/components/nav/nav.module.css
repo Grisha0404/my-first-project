@@ -1,8 +1,10 @@
+
 .nav{
     grid-area: n;
-    background-color: darkgrey;
+    background-color: skyblue;
     padding: 20px;
-    text-align: center;
+    text-align: left;
+    height: 550px;
 }
 .item {
     color: white;
@@ -12,4 +14,7 @@
 .active{
     color: black;
     text-decoration: none;
+}
+.settings{
+    margin-top: 40px;
 }

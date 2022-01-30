@@ -3,19 +3,32 @@
     grid-template-columns: 2fr 10fr;
 }
 .dialogsItem{
-    padding: 10px;
-}
-.dialogsItem .dialog{
+    border-right: 2px outset dodgerblue;
+    padding: 20px;
 
 }
-.dialogsItem .active{
-    color: red;
+.dialogsItem img{
+width: 50px;
 }
+
 .messages{
-    padding: 10px;
+    margin-top: 50px;
+    margin-left: 220px;
 }
 
-.messages .message{
+.active{
+    color: darkgrey;
+    text-decoration: none;
+}
+.item{
+    color: black;
+    text-decoration: none;
+}
+.newMessage{
 
-
+    margin-top: 20px;
+}
+.button{
+    margin-top: 10px;
+    margin-left: 50px;
 }

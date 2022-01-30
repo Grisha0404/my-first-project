@@ -7,9 +7,10 @@
     grid-template-rows: 60px 1fr; /*сколько строк*/
     grid-template-columns: 2fr 10fr; /*сколько колонок*/
     grid-gap: 10px;
-
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.App-wrapper-content{
+
+.App-wrapper-content {
     grid-area: c;
 }
 

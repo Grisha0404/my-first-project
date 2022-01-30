@@ -4,4 +4,8 @@
 
 .textBlock {
     margin-top: 10px;
+   max-width: 500px;
+}
+.button{
+    margin-left: 102px;
 }

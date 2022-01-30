@@ -3,7 +3,7 @@
 
 .header{
     grid-area: h;
-    background-color: dimgrey;
+    background-color: dodgerblue;
 }
 .header img{
     width: 60px;

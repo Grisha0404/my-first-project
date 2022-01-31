@@ -3,13 +3,15 @@ import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Massege/Message";
 
+
 const Dialogs = (props) => {
     let messagesElements = props.messages.map(m => <Message message={m.message}/>);
     let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} ava={d.ava}/>);
     let newMessageElement = React.createRef();
-    let send = () =>{
+    let send = () => {
         let text = newMessageElement.current.value;
-        alert(text)
+        props.addMessage(text);
+        newMessageElement.current.value = '';
     }
     return (
         <div className={s.dialogs}>

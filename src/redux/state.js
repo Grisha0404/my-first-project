@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     profilePage: {
         posts: [
@@ -10,15 +12,21 @@ let state = {
             {
                 id: 1,
                 name: 'Pasha',
-                ava: <img src='https://freepikpsd.com/file/2019/10/avatar-icon-png-5-Images-PNG-Transparent.png' alt={'ava'}/>
+                ava: <img src='https://freepikpsd.com/file/2019/10/avatar-icon-png-5-Images-PNG-Transparent.png'
+                          alt={'ava'}/>
             },
             {id: 2, name: 'Olya', ava: <img src='https://cdn-icons-png.flaticon.com/512/194/194938.png' alt={'ava'}/>},
-            {id: 3, name: 'Sasha', ava: <img src='https://iconape.com/wp-content/png_logo_vector/avatar-11.png' alt={'ava'}/>},
+            {
+                id: 3,
+                name: 'Sasha',
+                ava: <img src='https://iconape.com/wp-content/png_logo_vector/avatar-11.png' alt={'ava'}/>
+            },
             {
                 id: 4,
                 name: 'Leha',
                 ava: <img
-                    src='https://preview.redd.it/dh5otp8kcf741.png?width=640&crop=smart&auto=webp&s=d795f12b5e3eea1ef4d7ceb8244fca98e2384dbf' alt={'ava'}/>
+                    src='https://preview.redd.it/dh5otp8kcf741.png?width=640&crop=smart&auto=webp&s=d795f12b5e3eea1ef4d7ceb8244fca98e2384dbf'
+                    alt={'ava'}/>
             }
         ],
         messages: [
@@ -33,9 +41,17 @@ export let addPosts = (postMessage) => {
     let newPost = {
         id: 5,
         message: postMessage,
-        likesCounts: 2
+        likesCounts: postMessage.length
     };
-    state.profilePage.posts.push(newPost)
+    state.profilePage.posts.unshift(newPost)
+    rerenderEntireTree(state);
 }
-
+export let addMessage = (textMessage) => {
+    let newMessage = {
+        id: 5,
+        message: textMessage
+    };
+    state.messagesPage.messages.push(newMessage);
+    rerenderEntireTree(state);
+}
 export default state;

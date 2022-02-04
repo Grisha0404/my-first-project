@@ -1,20 +1,9 @@
 import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPosts, {MyPostsPropsType} from "./MyPosts/MyPosts";
-import {updateNewPostText} from "../../redux/state";
+import MyPosts from "./MyPosts/MyPosts";
 
- type profilePropsType = {
-    profilePage:
-        {
-            newPostText: string,
-            posts: string
-        },
-    addPosts: string,
-    updateNewPostText: string,
 
-}
-
-const Profile = (props: profilePropsType) => {
+const Profile = (props) => {
     return <div>
         <div>
             <ProfileInfo/>

@@ -1,16 +1,9 @@
 import React from 'react';
 import s from './MyPosts.module.css'
-import Post, {postType} from "./Posts/Post";
-
-export type MyPostsPropsType = {
-    newPostText: string,
-    posts: Array<postType>,
-    addPosts: string,
-    updateNewPostText: string
-}
+import Post from "./Posts/Post";
 
 
-const MyPosts = (props: MyPostsPropsType) => {
+const MyPosts = (props) => {
     let postsElement = props.posts.map(p => <Post message={p.message} likesCounts={p.likesCounts}/>);
     let newPostElement = React.createRef();
     let addPost = () => {
@@ -21,7 +14,7 @@ const MyPosts = (props: MyPostsPropsType) => {
         props.updateNewPostText(newText);
     }
     return (
-        <div className={s.MyPost}>
+        <div className={s.myPost}>
             My post
             <div className={s.textBlock}>
                 <div>

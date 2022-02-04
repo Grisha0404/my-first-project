@@ -7,26 +7,8 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Profile from "./components/profile/Profile";
-import {updateNewPostText} from "./redux/state";
-import {dialogItemType} from "./components/Dialogs/DialogItem/DialogItem";
-import {messageType} from "./components/Dialogs/Massege/Message";
 
-type appPropsType = {
-    state:
-        {
-            profilePage: string,
-            messagesPage:
-                {
-                    dialogs: Array<dialogItemType>,
-                    messages: Array<messageType>
-                }
-        },
-    addPosts: string,
-    updateNewPostText: string,
-    addMessage: string
-}
-
-const App = (props: appPropsType) => {
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className='App-wrapper'>

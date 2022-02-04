@@ -1,15 +1,10 @@
 import React from 'react'
 import s from './Dialogs.module.css'
-import DialogItem, {dialogItemType, dialogType} from "./DialogItem/DialogItem";
-import Message, {messageType} from "./Massege/Message";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Massege/Message";
 
-type dialogsPropsType = {
-    messages: Array<messageType>,
-    dialogs: Array<dialogItemType>,
-    addMessage:string
-}
 
-const Dialogs = (props: dialogsPropsType) => {
+const Dialogs = (props) => {
     let messagesElements = props.messages.map(m => <Message message={m.message}/>);
     let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} ava={d.ava}/>);
     let newMessageElement = React.createRef();

@@ -1,4 +1,32 @@
-let rerenderEntireTree = ()=>{
+type PostType = {
+    id: number
+    message: string
+    likesCounts: number
+}
+type DialogsType = {
+    id: number
+    name: string
+    ava: string
+}
+type MessagesType = {
+    id: number
+    message: string
+}
+type ProfilePageType = {
+    posts: PostType
+    newPostText: string
+}
+type MessagesPageType = {
+    dialogs: DialogsType
+    messages: MessagesPageType
+}
+
+type RootStateType = {
+    profilePage: ProfilePageType
+    messagesPage: MessagesPageType
+}
+
+let rerenderEntireTree = () => {
     console.log('change')
 }
 
@@ -15,21 +43,22 @@ let state = {
             {
                 id: 1,
                 name: 'Pasha',
-                ava: <img src='https://freepikpsd.com/file/2019/10/avatar-icon-png-5-Images-PNG-Transparent.png'
-                          alt={'ava'}/>
+                ava: 'https://freepikpsd.com/file/2019/10/avatar-icon-png-5-Images-PNG-Transparent.png'
             },
-            {id: 2, name: 'Olya', ava: <img src='https://cdn-icons-png.flaticon.com/512/194/194938.png' alt={'ava'}/>},
+            {
+                id: 2,
+                name: 'Olya',
+                ava: 'https://cdn-icons-png.flaticon.com/512/194/194938.png'
+            },
             {
                 id: 3,
                 name: 'Sasha',
-                ava: <img src='https://iconape.com/wp-content/png_logo_vector/avatar-11.png' alt={'ava'}/>
+                ava: 'https://iconape.com/wp-content/png_logo_vector/avatar-11.png'
             },
             {
                 id: 4,
                 name: 'Leha',
-                ava: <img
-                    src='https://preview.redd.it/dh5otp8kcf741.png?width=640&crop=smart&auto=webp&s=d795f12b5e3eea1ef4d7ceb8244fca98e2384dbf'
-                    alt={'ava'}/>
+                ava: 'https://preview.redd.it/dh5otp8kcf741.png?width=640&crop=smart&auto=webp&s=d795f12b5e3eea1ef4d7ceb8244fca98e2384dbf'
             }
         ],
         messages: [
@@ -48,7 +77,7 @@ export let addPosts = () => {
     };
     state.profilePage.posts.unshift(newPost)
     state.profilePage.newPostText = '';
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 }
 export let addMessage = (textMessage) => {
     let newMessage = {
@@ -56,13 +85,13 @@ export let addMessage = (textMessage) => {
         message: textMessage
     };
     state.messagesPage.messages.push(newMessage);
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 }
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 }
-export const subscribe = (observer) =>{
- rerenderEntireTree = observer;
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 export default state;
